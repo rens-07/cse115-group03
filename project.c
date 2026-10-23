@@ -1,8 +1,18 @@
+void print_hangman(int strikes)
+{
+    printf("\n  +---+\n");
+    printf("  |   |\n");
+    printf("  %s   |\n", strikes >= 1 ? "O" : " ");
+    printf(" %s%s%s  |\n", strikes >= 3 ? "/" : " ", strikes >= 2 ? "|" : " ", strikes >= 4 ? "\\" : " ");
+    printf(" %s %s  |\n", strikes >= 5 ? "/" : " ", strikes >= 6 ? "\\" : " ");
+    printf("      |\n");
+    printf("=========\n\n");
+}
+
 void logic(void)
 {
     char guess;
-    int correct_count = 0, 
-        changes;
+    int correct_count = 0, changes;
     word_len();
 
     char *guessed_word = (char *) malloc(sizeof(char) * (++word_length));
@@ -13,6 +23,7 @@ void logic(void)
     
     while (1)
     {
+        print_hangman(strikes);
         guess = user_input();
         changes = 0;
 
@@ -56,8 +67,9 @@ void logic(void)
 
         if (strikes == 7)
         {
+            print_hangman(strikes);
             printf("\nYou Failed!\n");
-            printf("Correct Word : %s", selected_node->word);
+            printf("Correct Word : %s\n", selected_node->word);
             break;
         } 
         else if (correct_count == word_length)
@@ -65,7 +77,7 @@ void logic(void)
             printf("\nCongratulation!\n");
             break;
         }
-        printf("\nStrikes : %d & Correct Guesses: %d\n\n", strikes, correct_count);
+        printf("\nStrikes : %zu & Correct Guesses: %d\n\n", strikes, correct_count);
     }
 
     free(guessed_word);
