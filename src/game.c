@@ -14,7 +14,7 @@ void logic(void)
         changes;
     word_len();
 
-    char *guessed_word = (char *) malloc(sizeof(char) * (++word_length));
+    char *guessed_word = (char *) malloc(sizeof(char) * (word_length));
     init_word(guessed_word);
     
     while (1)
@@ -24,15 +24,14 @@ void logic(void)
 
         for (int i = 0; selected_node->word[i] != '\0'; i++)
         {
-            if ( is_sameLetter ( selected_node->word[i], guess) && 
-                !is_sameLetter ( *(guessed_word + i), guess))
+            if (is_sameLetter(*(guessed_word + i), guess))
+            {
+                changes = -1;
+            } else if (is_sameLetter(selected_node->word[i], guess))
             {
                 * (guessed_word + i) = guess;
                 correct_count++;
                 changes = 1;
-            } else if (is_sameLetter ( *(guessed_word + i), guess))
-            {
-                changes = -1; // already guessed
             }
 
             printf ("%c", *(guessed_word + i));
