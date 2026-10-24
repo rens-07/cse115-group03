@@ -6,16 +6,16 @@ This is a word guessing game developed in **C** using **raylib** library, which 
 
 ## Features
 
-**Registration**          : Allow new players to create an account.
-**User Verification**     : Verify player credentials and grant access to their existing account.
-**Guest Mode**            : Allow players to play without creating an account.
-**Hangman Gameplay**      : Guess hidden words through an interactive graphical interface.
-**Guess Validation**      : Prevent repeated guesses from incurring additional strikes and handle invalid input.
-**Progressive Drawing**   : The hangman is drawn progressively with each incorrect guess.
-**Theme Customization**   : Customize the graphical interface with different colors and themes.
-**Saved Settings**        : Save and restore registered player's prefferred themes between sessions.
-**Player Statistics**     : Keep track of players' wins, losses, total matches played, and win rate across sessions.
-**Cross-Platform Support**: Intended to support Windows, Linux, and macOS. 
+**Registration**          : Allow new players to create an account.<br>
+**User Verification**     : Verify player credentials and grant access to their existing account.<br>
+**Guest Mode**            : Allow players to play without creating an account.<br>
+**Hangman Gameplay**      : Guess hidden words through an interactive graphical interface.<br>
+**Guess Validation**      : Prevent repeated guesses from incurring additional strikes and handle invalid input.<br>
+**Progressive Drawing**   : The hangman is drawn progressively with each incorrect guess.<br>
+**Theme Customization**   : Customize the graphical interface with different colors and themes.<br>
+**Saved Settings**        : Save and restore registered player's prefferred themes between sessions.<br>
+**Player Statistics**     : Keep track of players' wins, losses, total matches played, and win rate across sessions.<br>
+**Cross-Platform Support**: Intended to support Windows, Linux, and macOS.<br> 
 
 ## Repository Structure
 
