@@ -24,15 +24,14 @@ void logic(void)
 
         for (int i = 0; selected_node->word[i] != '\0'; i++)
         {
-            if ( is_sameLetter ( selected_node->word[i], guess) && 
-                !is_sameLetter ( *(guessed_word + i), guess))
+            if (is_sameLetter(*(guessed_word + i), guess))
+            {
+                changes = -1;
+            } else if (is_sameLetter(selected_node->word[i], guess))
             {
                 * (guessed_word + i) = guess;
                 correct_count++;
                 changes = 1;
-            } else if (is_sameLetter ( *(guessed_word + i), guess))
-            {
-                changes = -1; // already guessed
             }
 
             printf ("%c", *(guessed_word + i));
@@ -43,7 +42,7 @@ void logic(void)
             strikes++;
         }
 
-        if (strikes == 7)
+        if (strikes == 6)
         {
             printf ("\nYou Failed!\n");
             printf ("Correct Word : %s", selected_node->word);
