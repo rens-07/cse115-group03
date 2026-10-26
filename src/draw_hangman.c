@@ -1,4 +1,10 @@
-void print_hangman(int strikes)
+#include <stdio.h>
+#include "game.h"
+
+
+
+
+void print_hangman(void)
 {
     printf("\n  +---+\n");
     printf("  |   |\n");
