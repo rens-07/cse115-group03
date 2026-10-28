@@ -7,6 +7,16 @@
 unsigned int strikes = 0;
 unsigned int word_length = 0;
 
+
+void clearScreen(){
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");    
+    #endif
+}
+
+
 void logic(void)
 {
     char guess;
@@ -17,7 +27,7 @@ void logic(void)
     char *guessed_word = (char *) malloc(sizeof(char) * (word_length + 1));
     init_word(guessed_word);
     
-    system("cls");
+    clearScreen();
     while (1)
     {
         guess = user_input();
@@ -41,7 +51,7 @@ void logic(void)
             strikes++;
         }
 
-        system("cls");
+        clearScreen();
         print_hangman();
         if (strikes != 6)
             printf("%s\n", guessed_word);
