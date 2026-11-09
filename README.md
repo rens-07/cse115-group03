@@ -21,11 +21,17 @@ This is a word guessing game developed in **C** using **raylib** library, which 
 
 ```bash
 /cse115-group03
+├── /.vscode
+│   ├── c_cpp_properties.json   # intellisense configuration
+│   ├── launch.json             # debugger launch configuration
+│   ├── settings.json           # VS code workspace settings
+│   └── tasks.json              # build task
 ├── /src
-|   ├── draw_hangman.c      # drawing hangman progressively 
-|   ├── game.c              # core game mechanics
-|   ├── game.h              # function prototypes for game.c
-|   └── main.c              # starts executing code
+│   ├── draw_hangman.c          # drawing hangman progressively 
+│   ├── game.c                  # core game mechanics
+│   ├── game.h                  # function prototypes for game.c
+│   └── main.c                  # starts executing code
+├── Makefile                    # cross-platform build configuration
 └── README.md
 ```
 
