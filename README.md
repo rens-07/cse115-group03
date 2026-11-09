@@ -7,15 +7,15 @@ This is a word guessing game developed in **C** using **raylib** library, which 
 ## Features
 | Feature | Description |
 | --- | --- |
-| **Registration** | Allow new players to create an account.|
-| **User Verification** | Verify player credentials and grant access to their existing account.|
-| **Guest Mode** | Allow players to play without creating an account.|
-| **Hangman Gameplay** | Guess hidden words through an interactive graphical interface.|
-| **Guess Validation** | Prevent repeated guesses from incurring additional strikes and handle invalid input.|
-| **Progressive Drawing** | The hangman is drawn progressively with each incorrect guess.|
-| **Theme Customization** | Customize the graphical interface with different colors and themes.|
-| **Player Statistics**  | Keep track of players' wins, losses, total matches played, and win rate across sessions.|
-| **Cross-Platform Support** | Intended to support Windows, Linux, and macOS.|
+| **Registration** | Allow new players to create an account |
+| **User Verification** | Verify player credentials and grant access to their existing account |
+| **Guest Mode** | Allow players to play without creating an account |
+| **Hangman Gameplay** | Guess hidden words through an interactive graphical interface |
+| **Guess Validation** | Prevent repeated guesses from incurring additional strikes and handle invalid input |
+| **Progressive Drawing** | The hangman is drawn progressively with each incorrect guess |
+| **Theme Customization** | Customize the graphical interface with different colors and themes |
+| **Player Statistics**  | Keep track of players' wins, losses, total matches played, and win rate across sessions |
+| **Cross-Platform Support** | Intended to support Windows, Linux, and macOS |
 
 ## Repository Structure
 
