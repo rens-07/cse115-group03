@@ -21,6 +21,7 @@ extern Word selected_node;
 void logic(void);
 void to_upper(char *);
 char user_input(void);
+int isValidGuess(char guess);
 void init_word(char *);
 void fword_length(void);
 int is_sameLetter(const char, const char);
