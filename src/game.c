@@ -90,10 +90,20 @@ void to_upper(char *alphabet)
 char user_input(void)
 {
     char ch;
-    printf("?: ");
-    scanf(" %c", &ch);
-    while (getchar() != '\n');
-    to_upper(&ch);
+    do
+    {
+        printf("?: ");
+        scanf(" %c", &ch);
+
+        while (getchar() != '\n');
+
+        to_upper(&ch);
+
+        if (!isValidGuess(ch))
+        {
+            printf("Invalid input! Enter a letter (A-Z).\n");
+        }
+    } while (!isValidGuess(ch));
     return ch;
 }
 
