@@ -8,7 +8,7 @@ unsigned int strikes = 0;
 unsigned int word_length = 0;
 
 
-void clearScreen(){
+void clear_screen(void){
     #ifdef _WIN32
         system("cls");
     #else
@@ -27,7 +27,7 @@ void logic(void)
     char *guessed_word = (char *) malloc(sizeof(char) * (word_length + 1));
     init_word(guessed_word);
     
-    clearScreen();
+    clear_screen();
     while (1)
     {
         guess = user_input();
@@ -51,7 +51,7 @@ void logic(void)
             strikes++;
         }
 
-        clearScreen();
+        clear_screen();
         print_hangman();
         if (strikes != 6)
             printf("%s\n", guessed_word);
@@ -99,11 +99,11 @@ char user_input(void)
 
         to_upper(&ch);
 
-        if (!isValidGuess(ch))
+        if (!is_valid_input(ch))
         {
-            printf("Invalid input! Enter a letter (A-Z).\n");
+            printf("Invalid input! Enter a letter (A-Z or a-z)!\n");
         }
-    } while (!isValidGuess(ch));
+    } while (!is_valid_input(ch));
     return ch;
 }
 
@@ -134,4 +134,11 @@ int is_sameLetter(const char alp1, const char alp2)
     unsigned int ui_ch2 = (unsigned int)alp2;
     if (ui_ch1 == ui_ch2)   return 1;
     return 0;
+}
+
+
+int is_valid_input(const char input)
+{
+    return  (input >= 'A' && input <= 'Z') ||
+            (input >= 'a' && input <= 'z');
 }
