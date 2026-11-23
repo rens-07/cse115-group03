@@ -1,0 +1,91 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build debug",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "PLATFORM=PLATFORM_DESKTOP",
+                "PROJECT_NAME=Hangman",
+                "OBJS=src/*.c",
+                "BUILD_MODE=DEBUG"
+            ],
+            "windows": {
+                "command": "C:/raylib/w64devkit/bin/mingw32-make.exe",
+                "args": [
+                    "RAYLIB_PATH=C:/raylib/raylib",
+                    "PROJECT_NAME=Hangman",
+                    "OBJS=src/*.c",
+                    "BUILD_MODE=DEBUG"
+                ]
+            },
+            "osx": {
+                "args": [
+                    "PROJECT_NAME=Hangman",
+                    "OBJS=src/*.c",
+                    "BUILD_MODE=DEBUG"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "PROJECT_NAME=Hangman",
+                    "DESTDIR=/home/linuxbrew/.linuxbrew",
+                    "RAYLIB_LIBTYPE=SHARED",
+                    "EXAMPLE_RUNTIME_PATH=/home/linuxbrew/.linuxbrew/lib",
+                    "OBJS=src/*.c",
+                    "BUILD_MODE=DEBUG"
+                ]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "build release",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "PLATFORM=PLATFORM_DESKTOP",
+                "PROJECT_NAME=Hangman",
+                "OBJS=src/*.c",
+                "BUILD_MODE=RELEASE"
+            ],
+            "windows": {
+                "command": "C:/raylib/w64devkit/bin/mingw32-make.exe",
+                "args": [
+                    "RAYLIB_PATH=C:/raylib/raylib",
+                    "PROJECT_NAME=Hangman",
+                    "OBJS=src/*.c"
+                ]
+            },
+            "osx": {
+                "args": [
+                    "PROJECT_NAME=Hangman",
+                    "OBJS=src/*.c"
+                ]
+            },
+            "linux": {
+                "args": [
+                    "PROJECT_NAME=Hangman",
+                    "DESTDIR=/home/linuxbrew/.linuxbrew",
+                    "RAYLIB_LIBTYPE=SHARED",
+                    "EXAMPLE_RUNTIME_PATH=/home/linuxbrew/.linuxbrew/lib",
+                    "OBJS=src/*.c"
+                ]
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "compiler: C:\\raylib\\w64devkit\\bin\\g++.exe"
+        }
+    ]
+}
