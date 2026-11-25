@@ -20,6 +20,8 @@ void clear_screen(void){
 
 void logic(void)
 {
+    strikes = 0;
+    word_length = 0;
     char guess;
     unsigned int correct_count = 0, 
         changes;
