@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "game.h"
+#include "word.h"
 
 
 
-unsigned int strikes = 0;
-unsigned int word_length = 0;
+unsigned int strikes;
+unsigned int word_length;
 
 
 void clear_screen(void){
@@ -33,14 +34,14 @@ void logic(void)
         guess = user_input();
         changes = 0;
 
-        for (int i = 0; selected_node.word[i] != '\0'; i++)
+        for (int i = 0; selected_entry.word[i] != '\0'; i++)
         {
             if (is_sameLetter(*(guessed_word + i), guess))
             {
                 changes = -1;
-            } else if (is_sameLetter(selected_node.word[i], guess))
+            } else if (is_sameLetter(selected_entry.word[i], guess))
             {
-                * (guessed_word + i) = guess;
+                *(guessed_word + i) = guess;
                 correct_count++;
                 changes = 1;
             }
@@ -59,7 +60,7 @@ void logic(void)
         if (strikes == 6)
         {
             printf ("\nYou Failed!\n");
-            printf ("Correct Word : %s", selected_node.word);
+            printf ("Correct Word : %s\n\n", selected_entry.word);
             break;
         } else if (correct_count == word_length)
         {
@@ -121,7 +122,7 @@ void init_word(char *str)
 
 void fword_length(void)
 {
-    while (selected_node.word[word_length] != '\0')
+    while (selected_entry.word[word_length] != '\0')
     {
         word_length++;
     }

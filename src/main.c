@@ -2,16 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 #include <raylib.h>
+#include <time.h>
 #include "game.h"
 #include "interface.h"
+#include "word.h"
 
-Word selected_node;
+extern WORDS selected_entry;
 extern PAGE PAGE_WINDOW;
 
 int main(void)
 {
-    // strcpy(selected_node.word, "APPLE");    
-    // logic();
+    srand((unsigned int)time(NULL));
+    word_selector();
+
+    logic();    // based on console
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "HANGMAN");
 
