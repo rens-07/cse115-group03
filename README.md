@@ -30,6 +30,10 @@ This is a word guessing game developed in **C** using **raylib** library, which 
 │   ├── draw_hangman.c          # drawing hangman progressively 
 │   ├── game.c                  # core game mechanics
 │   ├── game.h                  # function prototypes for game.c
+│   ├── interface.c             # implementation of graphical interface
+│   ├── interface.h             # function prototypes for interface.c 
+│   ├── word.c                  # necessary words and selector to run the game
+│   ├── word.h                  # function prototype for word.c
 │   └── main.c                  # starts executing code
 ├── Makefile                    # cross-platform build configuration
 └── README.md
@@ -61,5 +65,5 @@ git clone https://github.com/rens-07/cse115-group03.git
 | --- | --- |
 | Md. Shahadat Hossain | 2632475042 |
 | Golam Morshed Abir | 2632598042 |
-| Md. Nabidul Islam Nafi | 2631008642 |
+| Md. Nabidul Islam Nafi | 2631008042 |
 | Iftekhar Hossen | 2631654042 |
